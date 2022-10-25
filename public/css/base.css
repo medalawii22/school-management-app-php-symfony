@@ -1,0 +1,28 @@
+#header1{
+    display:flex;
+    width:75vw;
+    margin:auto;
+    background:rgb(250, 250, 91);
+}
+#header1 .logo1,#header1 .logo2{
+    flex:1;
+    height:8rem;
+    display: flex;
+}
+#header1 .logo1 img,#header1 .logo2 img {
+    width:60%;
+    height:100%;
+    justify-content: space-around;
+    border-radius: 50%;
+    margin:auto;
+}
+
+#header1 .title
+{
+    flex:3
+}
+#header1 .title h1{
+    color:rgba(0, 128, 0, 0.671);
+    margin-top:2.5rem;
+    margin-left:3.5rem;
+}

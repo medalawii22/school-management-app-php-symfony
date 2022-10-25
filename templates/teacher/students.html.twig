@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container1" style="height:65vh; width:75vw;margin:auto;border:2px solid green;">
+{% for row in array %}
+<div style="color:green;font-size:22px;font-weight:700; display:flex;justify-content:space-around;">
+<div>{{row.element.nomElement}}</div>
+</div>
+<table style="width:80%;margin:auto;border:2px solid black;">
+    <tr>
+    <th>etudiant</th>
+    <th>note</th>
+    <th>action</th>
+    </tr>
+    {% for info in row.info %}
+    <tr>
+        <td>{{info.student}}</td>
+        <td>
+        {% if info.noteElement is not null %}
+            {{ info.noteElement.value }}
+        {% else %}
+             pas défini
+        {% endif %}
+        </td>
+        <td>
+        <a href="{{path("setNote",{"studentId":info.student.id,"elementId":row.element.id})}}" class="btn btn-primary">
+        {% if info.noteElement is not null %} Modier
+        {% else %}
+        Donner note
+        {% endif %}
+        <a/>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endfor %}
+<div style="position:fixed;bottom:6rem;left:47%;font-size:23px">
+    {{ knp_pagination_render(array) }}
+</div>
+</div>
+
+{% endblock  %} 
+

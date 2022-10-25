@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: rgb(196, 214, 196);
+}
+.wrapper{
+    display:flex;
+    width:45vw;
+    height:50vh;
+    border:2px solid green;
+    margin:auto;
+    border-radius: 26px;
+    margin-top: 15vh;
+}
+.wrapper .logo{
+    flex:1
+}
+.wrapper .logo img{
+    width:80%;
+    margin:auto;
+    border-radius: 50%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.wrapper .login{
+    flex:3.4;
+    display:flex;
+    flex-direction: column;
+
+}
+.wrapper .login h2{
+    flex:1;
+    color: green;
+    margin-top: 1.5rem;
+}
+.wrapper .login .message{
+    flex:1;
+    background:white;
+    border-radius: 4px;
+    width:90%;
+}
+.wrapper .login form{
+    height:80%;
+    width:90%;
+    display:flex;
+    margin-top:1rem;
+    flex-direction: column;
+    flex:5;
+    margin-bottom: 1rem;
+}
+.wrapper .login form label{
+    color:green;
+    margin-top: .8rem;
+}
+.wrapper .login form input{
+    margin-top:.2rem;
+    height:2rem;
+    border-radius:5px;
+    padding-left:.3rem;
+    border:none;
+}
+button{
+    margin-top:.9rem;
+    background-color: green;
+    color: white;
+    height:2.2rem;
+    font-size: 16px;
+    border-radius: 6px;
+    width:8rem;
+    cursor: pointer;
+}
+.lbl{
+    display:flex;
+}
+
+.lbl span{
+    margin-top:.6rem;
+    margin-left:.6rem;
+}

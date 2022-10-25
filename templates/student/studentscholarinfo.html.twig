@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container2" style="margin:auto;width:75vw;height:65vh;border:2px solid green;">
+    <div style="display:flex;jsutify-content:space-around;">
+        <div style="color:green;font-size:24px;font-weight:800">Info SColaire</div>
+    </div>
+    <table>
+        <tr>
+            <th>Filiere</th>
+            <th>{{user.classe.filiere.nomFiliere}}</th>
+        </tr>
+                <tr>
+            <th>niveau</th>
+            <th>{{user.classe.niveau.niveauName}}</th>
+        </tr>
+                <tr>
+            <th>classe</th>
+            <th>{{user.classe.className}}</th>
+        </tr>
+      
+    </table>
+</div>
+{% endblock %}

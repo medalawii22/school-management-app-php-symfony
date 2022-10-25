@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+<div class="container1" style="width:75vw;height:65vh;margin:auto;border:2px solid green;">
+  <div style="color:green;font-size:23px; display:flex;justify-content:space-around;">
+    <div>Resultat des examans</div>
+  </div>
+  <div class="resultat">
+  <table style="width:60%;margin:auto;">
+    <tr>
+      <th>element</th>
+      <th>Note</th>
+    </tr>
+      {% for note in user.notes %}
+        <tr>
+          <td>{{note.element.nomElement}}</td>
+          <td>{{note.value}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container1" style="width:75vw;height:65vh;margin:auto;border:2px solid green;">
+  <div style="color:green;font-size:23px; display:flex;justify-content:space-around;">
+    <div>Mes modules et Elements</div>
+  </div>
+  <div style="width:80%;margin:auto;">
+    {% for module in user.classe.modules %}
+    <div class="row" style="border:1px solid red; display:flex; justify-content:space-around">
+         <div class="column" style="height:6rem;display:flex;flex-direction:column;justify-content:space-around;">
+          <div style="color:blue;font-size:20px;">
+            {{module.nomModule}}
+          </div>
+         </div>
+         <div class="column2" style="height:6rem; display:flex;flex-direction:column;justify-content:space-around">
+           {% for element in module.elements %}
+              <div class="element">
+              {{element.nomElement}}
+              </div>
+           {% endfor %}
+         </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

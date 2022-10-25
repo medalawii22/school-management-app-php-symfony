@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container2" style="width:75vw;height:70vh;border:2px solid green">
+<div style="margin-left:auto;margin-right:auto;margin-top:3rem;margin-bottom:3rem;"><h2 style="color:green;">Changer le mot de passe</h2></div>
+<div  style="margin-left:6rem;font-size:22px;font-weight:600">
+
+{{form_start(form)}}
+    <div class="form-group">
+    <i class="fa fa-calendar"></i> 
+    {{ form_label(form.oldPassword) }}
+    {{ form_widget(form.oldPassword,{attr:{class:"form-control"}}) }}
+    <div class="form-error" style="color:red;font-size:15px">
+        {{ form_errors(form.oldPassword) }}
+    </div>
+    </div>
+
+    <div class="form-group">
+    <i class="fa fa-calendar"></i> 
+    {{ form_label(form.newPassword) }}
+    {{ form_widget(form.newPassword,{attr:{class:"form-control"}}) }}
+    <div class="form-error" style="color:red;font-size:14px">
+     {{ form_errors(form.newPassword) }}
+     </div>
+
+    </div>
+        <div class="form-group">
+    <i class="fa fa-calendar"></i> 
+    {{ form_label(form.repeatNewPassword) }}
+    {{ form_widget(form.repeatNewPassword,{attr:{class:"form-control"}}) }}
+
+    <div class="form-error" style="color:red;font-size:15px">
+        {{ form_errors(form.repeatNewPassword) }}
+    </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">submit</button>
+    </div>
+{{form_end(form)}}
+</div>
+{% endblock %}

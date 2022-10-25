@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+           <link rel="stylesheet" href="{{asset('css/student.css')}}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">       
+     {% endblock %}
+
+        {% block javascripts %}
+                    {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+         <header id='header1'>
+            <div class="logo1">
+                <img src="{{asset('images/magic.png') }}" alt="the magic school of hogworths">
+            </div>
+            <div class="title">
+                <h1>The Magic School Of Hogworths</h1>
+            </div>
+            <div class="logo2">
+                <img src="{{asset('images/magic.png')}}" alt="the great magic school of hogworths">
+            </div>
+        </header>
+
+        {% if is_granted('ROLE_STUDENT') %}
+        <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-around" style="width:75vw; margin:auto;"> 
+          <div class="collapse navbar-collapse " id="navbarCollapse">
+            <div class="navbar-nav ">
+              <a href="{{path('studentProfile')}}" class="nav-item nav-link active" style="display:flex;">
+                <img src="/images/home.png" alt="home img" style="height:1.6rem">
+                <div>Home</div>
+              </a> 
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Info</a> 
+                                <div class="dropdown-menu"> 
+                                  <a href="{{path('studentscholarinfo')}}" class="dropdown-item">Info scolaires</a> 
+                                </div> 
+                        </div>
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">inscription</a> 
+                                <div class="dropdown-menu"> 
+                                  <a href="{{path('inscription')}}" class="dropdown-item">actuelle</a> 
+                                </div> 
+                        </div>
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">resultats</a> 
+                                <div class="dropdown-menu"> 
+                                  <a href="{{path('studentnotes')}}" class="dropdown-item">resultat</a> 
+                                </div> 
+                        </div>
+                    </div> 
+          </div> 
+          <div class="navbar-brand" >
+              <a href="{{ path('app_logout')}}"style="display:flex;">
+                <img src="/images/signout.png" style="height:1.8rem">
+                <div>Log Out</div>
+              </a>          
+          </div>
+        </nav>
+        {% endif %}
+         {% if is_granted('ROLE_TEACHER') %}
+                 <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-around" style="width:75vw; margin:auto;"> 
+          <div class="collapse navbar-collapse " id="navbarCollapse">
+            <div class="navbar-nav ">
+              <a href="{{path("teacherprofile")}}" class="nav-item nav-link active" style="display:flex;">
+                <img src="/images/home.png" alt="home img" style="height:1.6rem">
+                <div>Home</div>
+              </a> 
+                        <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">mes élements</a> 
+                                <div class="dropdown-menu"> 
+                                  <a href="{{path("teacherelements")}}" class="dropdown-item">Elements</a> 
+                                  <a href="{{path("teacherstudents")}}" class="dropdown-item">Notes</a> 
+                                </div> 
+                        </div>
+                    </div> 
+          </div> 
+          <div class="navbar-brand" style="display:flex;" >
+              <a href="{{ path('teacherSettings') }}" style="margin-right:1rem"> <i class="fas fa-cog"></i>settings</a>
+              <a href="{{ path('app_logout')}}"style="display:flex;">
+                <img src="/images/signout.png" style="height:1.8rem">
+                <div>Log Out</div>
+              </a>          
+          </div>
+        </nav>
+        {% endif %}
+         {% block header %}
+         {% endblock %}
+        {% block body %}
+
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+    </body>
+</html>

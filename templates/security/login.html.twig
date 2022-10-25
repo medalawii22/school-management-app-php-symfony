@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="{{asset("css/login.css")}}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="/images/magic.png" alt="the school of magic">
+        </div>
+        <div class="login">
+            <h2>Log in</h2>
+            <div class="message">Please enter your Hogworths credentials to access MyHogworths </div>
+            <form action="" method="post">
+                {% if error %}
+                <div class="alert alert-danger" style="color:red">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <label for="inputEmail">Email</label>
+                <input type="email" name="email" id="">
+                <label for="inputPasword">Password</label>
+                <input type="password" name="password" id="">
+                   <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+             <button>Log In</button>
+            <label class="lbl">
+                <input type="checkbox" name="_remember_me"> <span>Remember me</span>
+            </label>
+             </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

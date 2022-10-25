@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{asset('css/home.css')}}">
+    <meta charset="utf-8" >
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <div class="img-container">
+                        <img src="/images/magic.png" alt="the school of ingeneering">
+                    </div>
+                    <h5>The Magic School Of The World</h5>
+                </div>
+                <div class="links">
+                    <ul>
+                        <li>About </li>
+                        <li>Programmes</li>
+                        <li>Insigts</li>
+                        <li>Students</li>
+                        <li>School and equipement</li>
+                    </ul>
+                </div>
+                <div class="login">
+                {% if not app.user %}
+                   <a href="login">
+                    <div class="icon">
+                        <img src="/images/personicon.png" alt="icon of the user">
+                    </div>
+                    <h4>Login</h4>
+                    </a>
+                 {% else %}
+                 <a href="logout">
+                  <div class="icon">
+                        <img src="/images/personicon.png" alt="icon of the user">
+                    </div>
+                    <h4>LogOut</h4>
+                    </a>
+                {% endif %}
+                </div>
+            </nav>
+            <div class="main-img">
+                <img src="/images/school.png">
+            </div>
+        </header>
+    </div>
+</body>
+</html>

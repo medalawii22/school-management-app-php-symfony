@@ -1,0 +1,30 @@
+.container{
+    width:75vw;
+    margin:auto;
+    border:2px solid green;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container .title{
+    background:red;
+    margin:auto;
+    font-size: 21px;
+}
+.container2{
+    width:70%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+.container2 .row{
+    display:flex;
+    flex-direction:row;
+    height:3rem;
+    border:1px solid black;
+}
+.container2 .row div{
+    flex:1;
+    border:1px solid red;
+    justify-self: auto;
+}
